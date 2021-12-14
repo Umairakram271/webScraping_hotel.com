@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+*.csv
+/venv
+/bin
+/lib
+/airbnb_csv
