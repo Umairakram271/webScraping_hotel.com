@@ -19,7 +19,8 @@ class AirbnbCrawler():
 
     def write_cvs(self, data, name):
         header = ["hotel_title", "address_hotel", "Room_condition", "Guest", "Bed_room", "Beds", "price"]
-        f_name = f'chkar{name}.csv'
+        f_name = f'chkar.csv'
+        print(name)
         with open(f_name,    'w') as data_file:
             writer = csv.writer(data_file)
             writer.writerow(header)
@@ -103,6 +104,7 @@ class AirbnbCrawler():
                     except:
                         price = "N/A"
 
+                    list(dict.fromkeys(row_data))
                     chkar_list.append(row_data)
                     print(chkar_list)
                     self.driver.close()
@@ -129,7 +131,7 @@ class AirbnbCrawler():
 
 
 def scrap_hotel():
-    locations = ["Hunza","Gojal"]
+    locations = ["murree","Hunza","skardu","Gilgit","Gojal"]
     for location in locations:
         # print("location",location ,"url",Hotel_URL[location])
         AirbnbCrawler().query(location)
